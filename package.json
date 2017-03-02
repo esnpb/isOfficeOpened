@@ -1,0 +1,22 @@
+{
+  "name": "isofficeopened",
+  "version": "1.0.0",
+  "description": "Simple API informing about ESN PB office availability",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esnpb/isOfficeOpened.git"
+  },
+  "author": "Karol Laskowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esnpb/isOfficeOpened/issues"
+  },
+  "homepage": "https://github.com/esnpb/isOfficeOpened#readme",
+  "dependencies": {
+    "express": "^4.15.0"
+  }
+}
