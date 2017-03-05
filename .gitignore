@@ -1,1 +1,5 @@
 node_modules/
+Configurator/IsOfficeOpenedConfigurator/IsOfficeOpenedConfigurator/bin
+Configurator/IsOfficeOpenedConfigurator/IsOfficeOpenedConfigurator/obj
+Configurator/IsOfficeOpenedConfigurator/packages
+.suo
