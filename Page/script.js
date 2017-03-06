@@ -29,7 +29,7 @@
             var time = new Date(result.OpenUntil);
             var hr = time.getHours();
             var mn = time.getMinutes();
-            subtitle = "Probably until " + (hr < 10 ? "0" + hr : hr) + ":" + (mn < 10 ? "0" + mn : mn);
+            subtitle = "Probably until " + (hr < 10 ? "0" + hr : hr) + ":" + (mn < 10 ? "0" + mn : mn) + ' (local time)';;
           }
           catch(ex) {
             // nothing
