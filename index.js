@@ -3,7 +3,11 @@
 const port = 3003;
 const express = require('express');
 const bodyParser = require('body-parser');
+var fs = require('fs');
 const app = express();
+
+const CONFIG_ENCODING = 'utf8';
+const CONFIG_PATH = './config.json';
 
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
@@ -15,7 +19,13 @@ app.use(function(req, res, next) {
 });
 
 app.get('/isofficeopened', (request, response) => {
-  response.send('yup');
+  fs.readFile(CONFIG_PATH, CONFIG_ENCODING, function (err, data) {
+    if (err) {
+	  response.send('{ error: "' + err + '"}');
+	}
+    var config = JSON.parse(data);
+	response.send(JSON.stringify(config));
+  });  
 });
 
 app.listen(port, (err) => {
