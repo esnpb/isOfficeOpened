@@ -19,13 +19,18 @@ app.use(function(req, res, next) {
 });
 
 app.get('/isofficeopened', (request, response) => {
-  fs.readFile(CONFIG_PATH, CONFIG_ENCODING, function (err, data) {
-    if (err) {
-	  response.send('{ error: "' + err + '"}');
-	}
-    var config = JSON.parse(data);
-	response.send(JSON.stringify(config));
-  });  
+  try {
+    fs.readFile(CONFIG_PATH, CONFIG_ENCODING, function (err, data) {
+	  if (err) {
+        throw { message: err };
+      }
+      var config = JSON.parse(data);
+      response.send(JSON.stringify(config));
+    });
+  }
+  catch(ex) {
+	response.send('{ error: "' + ex.message + '"}');
+  }
 });
 
 app.listen(port, (err) => {

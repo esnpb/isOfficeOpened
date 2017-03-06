@@ -1,6 +1,6 @@
 {
   "name": "isofficeopened",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Simple API informing about ESN PB office availability",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/esnpb/isOfficeOpened#readme",
   "dependencies": {
-    "express": "^4.15.0"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.0",
+	"fs": "0.0.1-security"
   }
 }
