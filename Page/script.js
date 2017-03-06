@@ -5,7 +5,7 @@
 
   var setStatus = function(status, subtitle, dotsInterval) {
     $subtitle.text(subtitle).show();
-    $("#status").text('NOPE');
+    $("#status").text(status);
     clearInterval(dotsInterval);
     $dots.hide();
   }
@@ -24,9 +24,9 @@
       timeout: TIMEOUT,
       success: function(result) {
         var subtitle = "But it can be closed in any time.";
-        if (result.timeUntil.length > 0) {
+        if (result.OpenUntil.length > 0) {
           try {
-            var time = new Date(result.timeUntil);
+            var time = new Date(result.OpenUntil);
             var hr = time.getHours();
             var mn = time.getMinutes();
             subtitle = "Probably until " + (hr < 10 ? "0" + hr : hr) + ":" + (mn < 10 ? "0" + mn : mn);

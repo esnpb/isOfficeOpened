@@ -30,6 +30,7 @@ namespace IsOfficeOpenedConfigurator
         {
             InitializeComponent();
             DateTime currentDate = DateTime.Now;
+            DateTime.SpecifyKind(currentDate, DateTimeKind.Local);
             nudHourUntil.Value = currentDate.Hour;
             nudMinutesUntil.Value = currentDate.Minute;
         }
@@ -61,7 +62,12 @@ namespace IsOfficeOpenedConfigurator
 
         public void SaveJson(MyConfig config)
         {
-            string json = JsonConvert.SerializeObject(config);
+            string json = JsonConvert.SerializeObject(
+                config,
+                new JsonSerializerSettings
+                {
+                    DateTimeZoneHandling = DateTimeZoneHandling.Local
+                });
             File.WriteAllText(@"./config.json", json);
         }
 

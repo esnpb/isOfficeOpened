@@ -15,20 +15,24 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Content-Type', 'application/json');
   next();
 });
 
-app.get('/isofficeopened', (request, response) => {
+app.get('/isofficeopened', (req, res) => {
   try {
     fs.readFile(CONFIG_PATH, CONFIG_ENCODING, function (err, data) {
 	  if (err) {
         throw { message: err };
       }
       var config = JSON.parse(data);
-      response.send(JSON.stringify(config));
+	  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	  console.log('request from', ip)
+      res.send(JSON.stringify(config));
     });
   }
   catch(ex) {
+	console.log('error', ex.message);
 	response.send('{ error: "' + ex.message + '"}');
   }
 });
