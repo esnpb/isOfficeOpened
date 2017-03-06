@@ -23,7 +23,7 @@
       url: "http://212.33.66.221:3003/isOfficeOpened",
       timeout: TIMEOUT,
       success: function(result) {
-        var subtitle = "But can be closed in any time.";
+        var subtitle = "But it can be closed in any time.";
         if (result.timeUntil.length > 0) {
           try {
             var time = new Date(result.timeUntil);
@@ -38,7 +38,7 @@
         setStatus("YUP", subtitle, dotsInterval);
       },
       error: function(errror) {
-        var subtitle = "But they may be hiding there...";
+        var subtitle = "But they may be hiding in there...";
         setStatus("NOPE", subtitle, dotsInterval);
       },
     });
