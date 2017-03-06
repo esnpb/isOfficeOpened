@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grbOpenedUntil = new System.Windows.Forms.GroupBox();
             this.nudMinutesUntil = new System.Windows.Forms.NumericUpDown();
             this.nudHourUntil = new System.Windows.Forms.NumericUpDown();
@@ -53,7 +54,7 @@
             this.grbOpenedUntil.Controls.Add(this.label1);
             this.grbOpenedUntil.Location = new System.Drawing.Point(13, 35);
             this.grbOpenedUntil.Name = "grbOpenedUntil";
-            this.grbOpenedUntil.Size = new System.Drawing.Size(262, 102);
+            this.grbOpenedUntil.Size = new System.Drawing.Size(290, 102);
             this.grbOpenedUntil.TabIndex = 0;
             this.grbOpenedUntil.TabStop = false;
             this.grbOpenedUntil.Text = "Czas otwarcia biura";
@@ -114,7 +115,7 @@
             this.grbOthers.Controls.Add(this.checkBox1);
             this.grbOthers.Location = new System.Drawing.Point(13, 143);
             this.grbOthers.Name = "grbOthers";
-            this.grbOthers.Size = new System.Drawing.Size(262, 100);
+            this.grbOthers.Size = new System.Drawing.Size(290, 100);
             this.grbOthers.TabIndex = 1;
             this.grbOthers.TabStop = false;
             this.grbOthers.Text = "Inne (nie działają)";
@@ -133,7 +134,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(200, 250);
+            this.btnClose.Location = new System.Drawing.Point(228, 250);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
@@ -159,14 +160,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 285);
+            this.ClientSize = new System.Drawing.Size(315, 285);
             this.Controls.Add(this.chbIsApiOn);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grbOthers);
             this.Controls.Add(this.grbOpenedUntil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "IsOfficeOpened config";
+            this.Text = "\"Is ESN PB office opened\" config";
             this.grbOpenedUntil.ResumeLayout(false);
             this.grbOpenedUntil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutesUntil)).EndInit();

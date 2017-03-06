@@ -80,6 +80,7 @@ namespace IsOfficeOpenedConfigurator
 
         private void nudHourUntil_Scroll(object sender, ScrollEventArgs e)
         {
+            // doesnt work?
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
                 bool isHourCtrl = (sender == nudHourUntil);
