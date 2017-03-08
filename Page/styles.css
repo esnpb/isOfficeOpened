@@ -15,7 +15,7 @@ body {
   top:0; bottom:0;
   margin:auto;
   text-align:center;
-font-size: 250%;
+  font-size: 250%;
   font-family:verdana;
   /*this to solve "the content will not be cut when the window is smaller than the content": */
   max-width:100%;
@@ -25,4 +25,24 @@ font-size: 250%;
 
 #subtitle {
   display: none;
+}
+
+#small-info {
+  color: darkgray;
+  font-size: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: verdana;
+}
+
+#contact-info {
+  text-align: right;
+  color: darkgray;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 0 15px 15px 0;
+  font-size: 9px;
+  font-family: verdana;
 }
